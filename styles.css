@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +9,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
+    min-width: 320px; 
 }
 
 .container {
@@ -34,7 +34,7 @@ ul {
     list-style: none;
 }
 
-/* Header Styles */
+
 header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -53,10 +53,12 @@ header .container {
 nav ul {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; 
 }
 
 nav ul li {
     margin-left: 20px;
+    margin-bottom: 5px; 
 }
 
 .button-link {
@@ -74,7 +76,7 @@ nav ul li {
 
 /* Search Return Section */
 .search-return {
-    background-color: #f1e6dd;
+    background-color: #f3d8c2;
     padding: 15px 0;
 }
 
@@ -90,48 +92,26 @@ nav ul li {
 
 /* Property Overview */
 .property-overview {
-    background-color: #f1e6dd;
+    background-color: #f3d8c2;
     padding: 20px 0 40px;
 }
 
-.property-overview .container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.amenities-section {
-    justify-content: center;
-    margin-left: 20px;
-    max-width: 100%;
-}
-
-.amenities-section h3 {
-    color: #2c5e6d;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.amenities-section .amenities-icons {
+.property-container {
     display: flex;
     flex-wrap: wrap;
-    max-width: 150px;
+    justify-content: space-between;
+    align-items: flex-start; 
 }
 
-.amenities-section .amenity-icon {
-    /* styles for each icon div */
-    color: #275a68;
-    margin: auto;
-    font-size: 35px;
-  }
-
 .property-info {
-    flex: 1;
-    padding-right: 30px;
+    flex: 1 1 300px; 
+    padding-right: 20px;
+    margin-bottom: 20px;
 }
 
 .property-image {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 300px; 
+    margin-bottom: 20px;
 }
 
 .property-image img {
@@ -140,6 +120,32 @@ nav ul li {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.amenities-section {
+    flex: 0 1 200px;
+    margin-left: 20px;
+    align-self: flex-start; 
+}
+
+.amenities-section h3 {
+    color: #2c5e6d;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.amenities-icons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 150px;
+    gap: 10px; 
+    justify-content: flex-start;
+}
+
+.amenities-section .amenity-icon {
+    color: #275a68;
+    font-size: 35px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
 
 h1 {
     color: #2c5e6d;
@@ -151,8 +157,9 @@ h1 {
     margin-top: 30px;
     padding: 15px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 100%;
 }
 
 .booking-policies h3 {
@@ -167,20 +174,63 @@ h1 {
 }
 
 
-.price-range {
-    flex: 1;
+.availability {
+    margin: 30px auto;
+    background-color: #f3d8c2;
+    border-radius: 40px;
+    padding: 15px 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+.availability-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.availability h2 {
+    color: #275a68;
+    white-space: nowrap;
+}
+
+.guests-select, .price-range {
+    display: flex;
+    align-items: center;
+    color: #2c5e6d;
+    white-space: nowrap; 
+}
+
+.guest-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.separator {
+    width: 2px;
+    height: 60px;
+    background-color: orange;
+    align-self: stretch;
+    flex-shrink: 0; 
 }
 
 .price-range span {
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 15px;
     padding: 10px;
     margin-top: 5px;
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
-/* Room Options */
 .room-options {
     padding: 40px 0;
 }
@@ -195,18 +245,19 @@ h1 {
 }
 
 .room-image {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 1 300px; 
+    min-height: 250px; 
+    max-height: 400px; 
 }
 
 .room-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
 }
 
 .room-details {
-    flex: 2;
+    flex: 2 1 400px; 
     padding: 20px;
 }
 
@@ -221,7 +272,6 @@ h1 {
     gap: 20px;
     margin-bottom: 20px;
 }
-
 
 .room-location h3,
 .room-amenities h3 {
@@ -240,6 +290,8 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .price .amount {
@@ -267,39 +319,47 @@ h1 {
     background-color: #1a3b44;
 }
 
+footer {
+    background-color: #f3d8c2;
+}
 
+footer p {
+    color:#275a68;
+}
 
-/* Media Queries for Responsiveness */
+footer .container {
+    justify-content: space-between;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+}
+
+/* This will change some elements based on the screen size */
 @media (max-width: 992px) {
-    .property-overview .container {
+    .property-container {
         flex-direction: column;
     }
     
     .property-info {
         padding-right: 0;
-        margin-bottom: 20px;
+        flex: 1 1 100%;
     }
     
-    .featured-amenities-sidebar {
-        position: static;
-        margin: 20px auto;
-        width: 100%;
-        max-width: 500px;
-        border-radius: 8px;
+    .property-image {
+        flex: 1 1 100%;
+    }
+    
+    .amenities-section {
+        margin: 20px 0;
+        flex: 1 1 100%;
     }
     
     .amenities-icons {
-        flex-direction: row;
-        justify-content: center;
-        gap: 15px;
+        max-width: 100%;
+        justify-content: flex-start;
     }
     
     .room-card {
         flex-direction: column;
-    }
-    
-    .room-image {
-        min-height: 200px;
     }
 }
 
@@ -313,7 +373,6 @@ h1 {
     }
     
     nav ul {
-        flex-wrap: wrap;
         justify-content: center;
     }
     
@@ -321,13 +380,39 @@ h1 {
         margin: 5px 10px;
     }
     
-    
-    .date-picker {
+    .availability-container {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .separator {
+        width: 100%;
+        height: 2px;
+    }
+    
+    .guests-select, .price-range {
+        width: 100%;
+        justify-content: space-between;
     }
     
     .room-pricing {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .room-specs {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .room-image {
+        min-height: 200px;
     }
 }
